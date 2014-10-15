@@ -37,7 +37,7 @@ public class User extends RealmObject {
         this.ssn = ssn;
     }
 
-    public RealmList<Meds> getMedsListedsList() {
+    public RealmList<Meds> getMedsList() {
         return medsList;
     }
 
