@@ -1,5 +1,6 @@
 package myfirstapp.example.com.nafnogkennitala.models;
 
+import io.realm.Realm;
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
@@ -44,7 +45,7 @@ public class User extends RealmObject {
         this.medsList = medsList;
     }
 
-    public faultList<Faults> getFaultList() {
+    public RealmList<Faults> getFaultList() {
         return faultList;
     }
 
@@ -52,7 +53,7 @@ public class User extends RealmObject {
         this.faultList = faultList;
     }
 
-    public allergyList<Allergy> getAllergyList(){
+    public RealmList<Allergy> getAllergyList(){
         return allergyList;
     }
 
