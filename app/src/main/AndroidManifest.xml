@@ -16,6 +16,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Allergy_input"
+            android:label="@string/title_activity_allergy_input"
+            android:parentActivityName=".MyActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="myfirstapp.example.com.nafnogkennitala.MyActivity" />
+        </activity>
+        <activity
+            android:name=".Medicine_input"
+            android:label="@string/title_activity_medicine_input"
+            android:parentActivityName=".MyActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="myfirstapp.example.com.nafnogkennitala.MyActivity" />
+        </activity>
+        <activity
+            android:name=".Disease_input"
+            android:label="@string/title_activity_disease_input"
+            android:parentActivityName=".MyActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="myfirstapp.example.com.nafnogkennitala.MyActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -4,5 +4,8 @@
     <string name="app_name">NafnOgKennitala</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_allergy_input">Allergy_input</string>
+    <string name="title_activity_medicine_input">Medicine_input</string>
+    <string name="title_activity_disease_input">Disease_input</string>
 
 </resources>

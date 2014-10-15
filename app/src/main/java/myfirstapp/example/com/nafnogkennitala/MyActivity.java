@@ -3,6 +3,7 @@ package myfirstapp.example.com.nafnogkennitala;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -53,7 +54,7 @@ public class MyActivity extends Activity {
 
         realm.commitTransaction();
 
-
+        startActivity(new Intent(getApplicationContext(), Allergy_input.class));
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
