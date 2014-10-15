@@ -13,6 +13,9 @@ import android.os.Build;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import io.realm.Realm;
+import myfirstapp.example.com.nafnogkennitala.models.User;
+
 
 public class MyActivity extends Activity {
 
@@ -39,6 +42,16 @@ public class MyActivity extends Activity {
         sum1 = n1;
         t1.setText(Integer.toString(sum1));
         t2.setText(text);
+
+
+        Realm realm = Realm.getInstance(this);
+
+        realm.beginTransaction();
+        User user = realm.createObject(User.class);
+        user.setName(e2.getText().toString());
+        user.setSsn(Integer.valueOf(e1.getText().toString()));
+
+        realm.commitTransaction();
 
 
     }
