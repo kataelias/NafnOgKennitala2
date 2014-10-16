@@ -20,20 +20,20 @@ public class Allergy_input extends Activity {
 
     public void onButtonClick(View v){
 
-        EditText e1 = (EditText)findViewById(R.id.write_allergy);
-        TextView t1 = (TextView)findViewById(R.id.txt_allergy);
-        String text = (e1.getText().toString());
-        t1.setText(text);
+        EditText AllergyInput = (EditText)findViewById(R.id.write_allergy);
+        TextView AllergyText = (TextView)findViewById(R.id.txt_allergy);
+        String text = (AllergyInput.getText().toString());
+        AllergyText.setText(text);
 
         startActivity(new Intent(getApplicationContext(), Medicine_input.class));
     }
 
     public void onNextButtonClick(View v) {
 
-        EditText e1 = (EditText)findViewById(R.id.write_allergy);
-        TextView t1 = (TextView)findViewById(R.id.txt_allergy);
-        String text = (e1.getText().toString());
-        t1.setText(text);
+        EditText AllergyInput = (EditText)findViewById(R.id.write_allergy);
+        TextView AllergyText = (TextView)findViewById(R.id.txt_allergy);
+        String text = (AllergyInput.getText().toString());
+        AllergyText.setText(text);
     }
 
     @Override
