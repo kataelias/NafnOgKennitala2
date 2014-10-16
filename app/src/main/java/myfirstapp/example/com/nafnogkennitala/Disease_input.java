@@ -8,6 +8,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/*
+Höfundur: Kristrún Harpa Gunnarsdóttir
+Dagsetning 16.10.2014
+
+Þessi klasi fylgir skjánum sem biður notanda um að slá inn kvilla sína, einn í einu. Notandi getur
+ýtt á takka til að slá inn annan, eða annan takka til að ljúka innslætti kvilla.
+ */
 
 public class Disease_input extends Activity {
 

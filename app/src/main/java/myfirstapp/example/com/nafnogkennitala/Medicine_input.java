@@ -9,6 +9,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/*
+Höfundur: Kristrún Harpa Gunnarsdóttir
+Dagsetning 14.10.2014
+
+Þessi klasi fylgir skjánum sem biður notanda um að slá inn lyf sín, eitt í einu. Notandi getur
+ýtt á takka til að slá inn annað, eða annan til að ljúka innslætti lyfja.
+ */
 
 public class Medicine_input extends Activity {
 

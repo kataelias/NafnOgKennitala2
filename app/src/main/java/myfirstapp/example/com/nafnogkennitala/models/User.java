@@ -1,5 +1,14 @@
 package myfirstapp.example.com.nafnogkennitala.models;
 
+/*
+Höfundur: Helga Sigríður Ívarsdóttir
+Dagsetning: 12.10.2014
+
+Þessi klasi tekur við upplýsingunum um notanda (nafn og kennitala), vistar þær í töflu og tengir
+við þá töflu, þrjár aðrar sem búnar eru til fyrir notandann: ofnæmi, lyf og sjúkdóma en inniheldur
+klasinn einnig gettera og settera fyrir alla hlutina sem hann inniheldur.
+ */
+
 import io.realm.Realm;
 import io.realm.RealmList;
 import io.realm.RealmObject;
