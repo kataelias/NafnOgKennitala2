@@ -37,16 +37,36 @@ public class MyActivity extends Activity {
 
     public void onButtonClick(View v){
 
-        int n1,sum1;
-        EditText e1 = (EditText)findViewById(R.id.kenniTala);
-        EditText e2 = (EditText)findViewById(R.id.nameText);
-        TextView t1 = (TextView)findViewById(R.id.kenniUttak);
-        TextView t2 = (TextView)findViewById(R.id.nafnUttak);
-        n1 = Integer.parseInt(e1.getText().toString());
-        String text = (e2.getText().toString());
-        sum1 = n1;
-        t1.setText(Integer.toString(sum1));
-        t2.setText(text);
+        int IntKennitala,NyttIntKennitala;
+        EditText EditTextKennitala = (EditText)findViewById(R.id.kenniTala);
+        EditText EditTextNafn = (EditText)findViewById(R.id.nameText);
+        TextView TextViewKennitala = (TextView)findViewById(R.id.kenniUttak);
+        TextView TextViewNafn = (TextView)findViewById(R.id.nafnUttak);
+        IntKennitala = Integer.parseInt(EditTextKennitala.getText().toString());
+        String text = (EditTextNafn.getText().toString());
+        NyttIntKennitala = IntKennitala;
+        TextViewKennitala.setText(Integer.toString(NyttIntKennitala));
+        TextViewNafn.setText(text);
+
+
+        String kennitala  = EditTextKennitala.getText().toString();
+        try{
+            if(!kennitala.matches("^(\\d){6}-(\\d){4}$|^(\\d){10}$"))
+                throw new java.io.IOException();
+        } catch(java.io.IOException e){
+            Toast.makeText(getApplicationContext(),"Kennitala vitlaus!",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        String nafn = EditTextNafn.getText().toString();
+        try{
+            if(!nafn.matches("^(\\w){1}(\\w){30}-(\\w){1}(\\w){50}$"))
+                throw new java.io.IOException();
+        } catch(java.io.IOException e){
+            Toast.makeText(getApplicationContext(),"Ólöglegt nafn",Toast.LENGTH_LONG).show();
+            return;
+        }
+
 
         Realm realm = null;
         try{
@@ -61,8 +81,8 @@ public class MyActivity extends Activity {
         if(realm != null) {
             realm.beginTransaction();
             User user = realm.createObject(User.class);
-            user.setName(e2.getText().toString());
-            user.setSsn(e1.getText().toString());
+            user.setName(EditTextNafn.getText().toString());
+            user.setSsn(EditTextKennitala.getText().toString());
 
             realm.commitTransaction();
 
