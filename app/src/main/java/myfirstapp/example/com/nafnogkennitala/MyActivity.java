@@ -21,6 +21,20 @@ import io.realm.exceptions.RealmIOException;
 import io.realm.exceptions.RealmMigrationNeededException;
 import myfirstapp.example.com.nafnogkennitala.models.User;
 
+/*
+Höfundur: Katrín Elíasdóttir
+Dagsetning: 10-12.10.2014
+
+Höfundur: Helga Sigríður Ívarsdóttir
+Dagsetning: 12.10.2014
+
+Höfundur: Kristrún Harpa Gunnarsdóttir
+Dagsetning 11-16.10.2014
+
+Þessi klasi tekur við upplýsingunum sem notandi gefur um þau lyf sem hann tekur og vistar þær í töflu en
+inniheldur einnig gettera og settera fyrir hvern entry í töfluna. Að loknum innslætti kallar
+klasinn svo á næsta glugga í forritinu.
+ */
 
 public class MyActivity extends Activity {
 

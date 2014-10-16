@@ -9,6 +9,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/*
+Höfundur: Kristrún Harpa Gunnarsdóttir
+Dagsetning 11.10.2014
+
+Þessi klasi fylgir skjánum sem biður notanda um að slá inn ofnæmi sín, eitt í einu. Notandi getur
+ýtt á takka til að slá inn annað, eða annan til að ljúka innslætti ofnæma.
+ */
 
 public class Allergy_input extends Activity {
 

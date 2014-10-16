@@ -1,5 +1,13 @@
 package myfirstapp.example.com.nafnogkennitala.models;
 
+/*
+Höfundur: Helga Sigríður Ívarsdóttir
+Dagsetning: 12.10.2014
+
+Þessi klasi tekur við upplýsingunum sem notandi gefur um ofnæmi sín og vistar þær í töflu en
+inniheldur einnig gettera og settera fyrir hvern entry í töfluna.
+ */
+
 import io.realm.RealmObject;
 import io.realm.annotations.RealmClass;
 
