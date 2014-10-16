@@ -49,12 +49,16 @@ public class MyActivity extends Activity {
         }
     }
 
-    /*  Tekur inn innsleginn texta af skjá. Textinn sem inniheldur kennitölu
+    /* Höfundur: Katrín Elíasdóttir
+       Dagsetning : 13.10.14
+
+        Tekur inn innsleginn texta af skjá. Textinn sem inniheldur kennitölu
         varpast í heiltölu og textinn sem inniheldur nafn varpast í streng.
         Þegar ýtt er á hnappinn er athugað hvort kennitalan innihaldi 10 tölustafi
         og leyfilegt er að kennitalan innihaldi bandstrik.  Textinn sem inniheldur
         nafn má innihalda íslenska stafi. Fornafn og eftirnafn verða að byrja á
          stórum staf og leyfilegt er að slá inn tvo fornöfn.
+         16.10.14 er enn verið að vinna í villaskilaboðum
     */
 
     public void onButtonClick(View v){
