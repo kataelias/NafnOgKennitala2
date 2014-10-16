@@ -1,6 +1,7 @@
 package myfirstapp.example.com.nafnogkennitala.models;
 
 import io.realm.RealmObject;
+import io.realm.annotations.RealmClass;
 
 /**
  * Created by Quima on 14/10/2014.

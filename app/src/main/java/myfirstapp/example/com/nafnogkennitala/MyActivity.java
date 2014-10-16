@@ -13,8 +13,12 @@ import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import io.realm.Realm;
+import io.realm.exceptions.RealmException;
+import io.realm.exceptions.RealmIOException;
+import io.realm.exceptions.RealmMigrationNeededException;
 import myfirstapp.example.com.nafnogkennitala.models.User;
 
 
@@ -44,17 +48,27 @@ public class MyActivity extends Activity {
         t1.setText(Integer.toString(sum1));
         t2.setText(text);
 
+        Realm realm = null;
+        try{
+            realm = Realm.getInstance(this, "newRealm");
+        } catch(RealmMigrationNeededException e){
+            Toast.makeText(this, "Migration Needed Exception: " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+        } catch(RealmIOException e){
+            Toast.makeText(this, "IO Exception: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        } catch(RealmException e){
+            Toast.makeText(this, "General Exception: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+        if(realm != null) {
+            realm.beginTransaction();
+            User user = realm.createObject(User.class);
+            user.setName(e2.getText().toString());
+            user.setSsn(e1.getText().toString());
 
-        Realm realm = Realm.getInstance(this);
+            realm.commitTransaction();
 
-        realm.beginTransaction();
-        User user = realm.createObject(User.class);
-        user.setName(e2.getText().toString());
-        user.setSsn(Integer.valueOf(e1.getText().toString()));
-
-        realm.commitTransaction();
-
-        startActivity(new Intent(getApplicationContext(), Allergy_input.class));
+            startActivity(new Intent(getApplicationContext(), Allergy_input.class));
+        }
+        //Toast.makeText(getApplicationContext(), "Yay!", Toast.LENGTH_LONG).show();
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
