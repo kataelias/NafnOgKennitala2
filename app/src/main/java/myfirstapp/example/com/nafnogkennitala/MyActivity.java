@@ -57,8 +57,8 @@ public class MyActivity extends Activity {
         Þegar ýtt er á hnappinn er athugað hvort kennitalan innihaldi 10 tölustafi
         og leyfilegt er að kennitalan innihaldi bandstrik.  Textinn sem inniheldur
         nafn má innihalda íslenska stafi. Fornafn og eftirnafn verða að byrja á
-         stórum staf og leyfilegt er að slá inn tvo fornöfn.
-         16.10.14 er enn verið að vinna í villaskilaboðum
+        stórum staf og leyfilegt er að slá inn tvo fornöfn.
+        16.10.14 er enn verið að vinna í villaskilaboðum
     */
 
     public void onButtonClick(View v){
