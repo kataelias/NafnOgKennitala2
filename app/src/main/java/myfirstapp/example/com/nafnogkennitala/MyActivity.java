@@ -63,16 +63,10 @@ public class MyActivity extends Activity {
 
     public void onButtonClick(View v){
 
-        int IntKennitala,NyttIntKennitala;
         EditText EditTextKennitala = (EditText)findViewById(R.id.kenniTala);
         EditText EditTextNafn = (EditText)findViewById(R.id.nameText);
         TextView TextViewKennitala = (TextView)findViewById(R.id.kenniUttak);
         TextView TextViewNafn = (TextView)findViewById(R.id.nafnUttak);
-        IntKennitala = Integer.parseInt(EditTextKennitala.getText().toString());
-        String text = (EditTextNafn.getText().toString());
-        NyttIntKennitala = IntKennitala;
-        TextViewKennitala.setText(Integer.toString(NyttIntKennitala));
-        TextViewNafn.setText(text);
 
 
         String kennitala  = EditTextKennitala.getText().toString();
