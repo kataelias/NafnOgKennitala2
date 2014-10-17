@@ -75,23 +75,23 @@ public class MyActivity extends Activity {
         TextViewNafn.setText(text);
 
 
-        //String kennitala  = EditTextKennitala.getText().toString();
-        //try{
-        //    if(!kennitala.matches("^(\\d){6}(\\w){1}(\\d){4}$|^(\\d){10}$"))
-        //        throw new java.io.IOException();
-        //} catch(java.io.IOException e){
-        //    Toast.makeText(getApplicationContext(),"Kennitala vitlaus!",Toast.LENGTH_LONG).show();
-        //    return;
-        //}
+        String kennitala  = EditTextKennitala.getText().toString();
+        try{
+            if(!kennitala.matches("^(\\d){6}[-](\\d){4}$|^(\\d){10}$"))
+                throw new java.io.IOException();
+        } catch(java.io.IOException e){
+            Toast.makeText(getApplicationContext(),"Kennitala vitlaus!",Toast.LENGTH_LONG).show();
+            return;
+        }
 
-        //String nafn = EditTextNafn.getText().toString();
-        //try{
-        //    if(!nafn.matches("^("^(\\w){1}(\\w){+}(\\s){1}(\\w){1}(\\w){+}$|^...))
-        //        throw new java.io.IOException();
-        //} catch(java.io.IOException e){
-        //    Toast.makeText(getApplicationContext(),"Ólöglegt nafn",Toast.LENGTH_LONG).show();
-        //    return;
-        //}
+        String nafn = EditTextNafn.getText().toString();
+        try{
+            if(!nafn.matches("^(\\w+)(\\s)(\\w+)$|^(\\w+)(\\s)(\\w+)(\\s)(\\w+)$"))
+                throw new java.io.IOException();
+        } catch(java.io.IOException e){
+            Toast.makeText(getApplicationContext(),"Ólöglegt nafn",Toast.LENGTH_LONG).show();
+            return;
+        }
 
 
         Realm realm = null;
