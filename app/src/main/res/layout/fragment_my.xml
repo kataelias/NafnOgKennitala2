@@ -45,9 +45,9 @@
             android:layout_width="220dp"
             android:layout_height="30dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Sladu inn nafn:"
+            android:text="Sláðu inn nafn:"
             android:id="@+id/nafnText"
-            android:background="#ffff3f45"
+            android:background="#ffff5f66"
             android:textColor="#ffffffff"
             android:gravity="center"
             android:layout_weight="0.06"
@@ -67,7 +67,7 @@
             android:id="@+id/nameText"
             android:layout_column="0"
             android:gravity="center"
-            android:text="Jon Jonsson"
+            android:text="Jón Ari Jónsson"
             android:layout_gravity="center" />
     </TableRow>
 
@@ -95,12 +95,12 @@
             android:layout_width="220dp"
             android:layout_height="30dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Sladu inn kennitolu:"
+            android:text="Sláðu inn kennitölu:"
             android:id="@+id/kenniText"
             android:layout_column="0"
             android:gravity="center"
             android:layout_gravity="center"
-            android:background="#ffff3634"
+            android:background="#ffff5f66"
             android:textColor="#ffffffff"
             android:layout_weight="0.06" />
     </TableRow>
@@ -123,7 +123,7 @@
             android:layout_column="0"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="00000001239"
+            android:text="123456-0009"
             android:layout_weight="0.06"
             android:layout_span="0" />
     </TableRow>
@@ -148,7 +148,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Stadfesta"
+            android:text="Staðfesta"
             android:id="@+id/kenniHnappur"
             android:layout_column="0"
             android:layout_gravity="center"

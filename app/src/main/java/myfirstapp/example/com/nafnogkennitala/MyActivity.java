@@ -80,7 +80,9 @@ public class MyActivity extends Activity {
 
         String nafn = EditTextNafn.getText().toString();
         try{
-            if(!nafn.matches("^(\\w+)(\\s)(\\w+)$|^(\\w+)(\\s)(\\w+)(\\s)(\\w+)$"))
+            if(!nafn.matches("^(\\w+)(\\s)(\\w+)$|^(\\w+)(\\s)(\\w+)(\\s)(\\w+)$|" +
+                   "^(\\w+)(\\s)(\\w+)(\\s)(\\w+)(\\s)(\\w+)$|" +
+                    "^(\\w+)(\\s)(\\w+)(\\s)(\\w+)(\\s)(\\w+)(\\s)(\\w+)$"))
                 throw new java.io.IOException();
         } catch(java.io.IOException e){
             Toast.makeText(getApplicationContext(),"Ólöglegt nafn",Toast.LENGTH_LONG).show();
