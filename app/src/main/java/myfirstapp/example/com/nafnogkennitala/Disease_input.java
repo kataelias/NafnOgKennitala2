@@ -35,10 +35,10 @@ public class Disease_input extends Activity {
 
     public void onNextButtonClick(View v) {
 
-        EditText AllergyInput = (EditText)findViewById(R.id.write_allergy);
-        TextView AllergyText = (TextView)findViewById(R.id.txt_allergy);
-        String text = (AllergyInput.getText().toString());
-        AllergyText.setText(text);
+        EditText DiseaseInput = (EditText)findViewById(R.id.write_disease);
+        TextView DiseaseText = (TextView)findViewById(R.id.txt_disease);
+        String text = (DiseaseInput.getText().toString());
+        DiseaseText.setText(text);
     }
 
 

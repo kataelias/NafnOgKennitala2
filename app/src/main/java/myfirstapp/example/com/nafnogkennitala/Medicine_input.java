@@ -27,10 +27,10 @@ public class Medicine_input extends Activity {
 
     public void onButtonClick(View v){
 
-        EditText e1 = (EditText)findViewById(R.id.write_medicine);
-        TextView t1 = (TextView)findViewById(R.id.txt_medicine);
-        String text = (e1.getText().toString());
-        t1.setText(text);
+        EditText MedicineInput = (EditText)findViewById(R.id.write_medicine);
+        TextView MedicineText = (TextView)findViewById(R.id.txt_medicine);
+        String text = (MedicineInput.getText().toString());
+        MedicineText.setText(text);
 
         startActivity(new Intent(getApplicationContext(), Disease_input.class));
         finish();
@@ -38,10 +38,10 @@ public class Medicine_input extends Activity {
 
     public void onNextButtonClick(View v) {
 
-        EditText e1 = (EditText)findViewById(R.id.write_allergy);
-        TextView t1 = (TextView)findViewById(R.id.txt_allergy);
-        String text = (e1.getText().toString());
-        t1.setText(text);
+        EditText MedicineInput = (EditText)findViewById(R.id.write_medicine);
+        TextView MedicineText = (TextView)findViewById(R.id.txt_medicine);
+        String text = (MedicineInput.getText().toString());
+        MedicineText.setText(text);
     }
 
     @Override
