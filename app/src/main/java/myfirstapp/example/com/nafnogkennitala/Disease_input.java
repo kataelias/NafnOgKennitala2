@@ -30,6 +30,7 @@ public class Disease_input extends Activity {
         TextView DiseaseText = (TextView)findViewById(R.id.txt_disease);
         String text = (DiseaseInput.getText().toString());
         DiseaseText.setText(text);
+        finish();
     }
 
     public void onNextButtonClick(View v) {
