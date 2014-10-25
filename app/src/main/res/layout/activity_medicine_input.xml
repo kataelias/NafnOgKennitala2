@@ -30,7 +30,7 @@
         android:layout_below="@+id/txt_medicine"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
-        android:hint="Ofnæmi" />
+        android:hint="Lyf" />
 
     <Button
         android:layout_width="200dp"
