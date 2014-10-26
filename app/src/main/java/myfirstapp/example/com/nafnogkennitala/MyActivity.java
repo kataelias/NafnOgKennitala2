@@ -61,56 +61,46 @@ public class MyActivity extends Activity {
         16.10.14 er enn verið að vinna í villaskilaboðum
     */
 
-    public void onButtonClick(View v){
+    public void onButtonClick(View v) {
 
-        EditText EditTextKennitala = (EditText)findViewById(R.id.kenniTala);
-        EditText EditTextNafn = (EditText)findViewById(R.id.nameText);
-        TextView TextViewKennitala = (TextView)findViewById(R.id.kenniUttak);
-        TextView TextViewNafn = (TextView)findViewById(R.id.nafnUttak);
+        EditText EditTextKennitala = (EditText) findViewById(R.id.kenniTala);
+        EditText EditTextNafn = (EditText) findViewById(R.id.nameText);
+        TextView TextViewKennitala = (TextView) findViewById(R.id.kenniUttak);
+        TextView TextViewNafn = (TextView) findViewById(R.id.nafnUttak);
 
 
-        String kennitala  = EditTextKennitala.getText().toString();
-        try{
-            if(!kennitala.matches("^(\\d){6}[-](\\d){4}$|^(\\d){10}$"))
+        String kennitala = EditTextKennitala.getText().toString();
+        try {
+            if (!kennitala.matches("^(\\d){6}[-](\\d){4}$|^(\\d){10}$"))
                 throw new java.io.IOException();
-        } catch(java.io.IOException e){
-            Toast.makeText(getApplicationContext(),"Kennitala vitlaus!",Toast.LENGTH_LONG).show();
+        } catch (java.io.IOException e) {
+            Toast.makeText(getApplicationContext(), "Kennitala vitlaus!", Toast.LENGTH_LONG).show();
             return;
         }
 
         String nafn = EditTextNafn.getText().toString();
-        try{
-            if(!nafn.matches("^(\\w+)(\\s)(\\w+)$|^(\\w+)(\\s)(\\w+)(\\s)(\\w+)$|" +
-                   "^(\\w+)(\\s)(\\w+)(\\s)(\\w+)(\\s)(\\w+)$|" +
+        try {
+            if (!nafn.matches("^(\\w+)(\\s)(\\w+)$|^(\\w+)(\\s)(\\w+)(\\s)(\\w+)$|" +
+                    "^(\\w+)(\\s)(\\w+)(\\s)(\\w+)(\\s)(\\w+)$|" +
                     "^(\\w+)(\\s)(\\w+)(\\s)(\\w+)(\\s)(\\w+)(\\s)(\\w+)$"))
                 throw new java.io.IOException();
-        } catch(java.io.IOException e){
-            Toast.makeText(getApplicationContext(),"Ólöglegt nafn",Toast.LENGTH_LONG).show();
+        } catch (java.io.IOException e) {
+            Toast.makeText(getApplicationContext(), "Ólöglegt nafn", Toast.LENGTH_LONG).show();
             return;
         }
 
 
-        Realm realm = null;
-        try{
-            realm = Realm.getInstance(this, "newRealm");
-        } catch(RealmMigrationNeededException e){
-            Toast.makeText(this, "Migration Needed Exception: " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-        } catch(RealmIOException e){
-            Toast.makeText(this, "IO Exception: " + e.getMessage(), Toast.LENGTH_LONG).show();
-        } catch(RealmException e){
-            Toast.makeText(this, "General Exception: " + e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-        if(realm != null) {
-            realm.beginTransaction();
-            User user = realm.createObject(User.class);
-            user.setName(EditTextNafn.getText().toString());
-            user.setSsn(EditTextKennitala.getText().toString());
+        Realm realm = Realm.getInstance(this);
+        realm.beginTransaction();
+        User user = realm.createObject(User.class);
+        user.setName(EditTextNafn.getText().toString());
+        user.setSsn(EditTextKennitala.getText().toString());
 
-            realm.commitTransaction();
+        realm.commitTransaction();
 
-            startActivity(new Intent(getApplicationContext(), Allergy_input.class));
-            finish();
-        }
+        startActivity(new Intent(getApplicationContext(), Allergy_input.class));
+        finish();
+
         //Toast.makeText(getApplicationContext(), "Yay!", Toast.LENGTH_LONG).show();
     }
 
@@ -142,7 +132,7 @@ public class MyActivity extends Activity {
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
+                                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_my, container, false);
             return rootView;
         }

@@ -26,10 +26,12 @@ public class Disease_input extends Activity {
 
     public void onButtonClick(View v){
 
+
         EditText DiseaseInput = (EditText)findViewById(R.id.write_disease);
         TextView DiseaseText = (TextView)findViewById(R.id.txt_disease);
         String text = (DiseaseInput.getText().toString());
         DiseaseText.setText(text);
+        Info.setInfoIsSaved(this);
         finish();
     }
 

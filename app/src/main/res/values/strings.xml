@@ -7,5 +7,11 @@
     <string name="title_activity_allergy_input">Allergy_input</string>
     <string name="title_activity_medicine_input">Medicine_input</string>
     <string name="title_activity_disease_input">Disease_input</string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="title_activity_info_choice">Info_choice</string>
+    <string name="title_activity_examine_user">ExamineUser</string>
+    <string name="title_activity_examine_allergy">ExamineAllergy</string>
+    <string name="title_activity_examine_meds">ExamineMeds</string>
+    <string name="title_activity_examine_disease">ExamineDisease</string>
 
 </resources>

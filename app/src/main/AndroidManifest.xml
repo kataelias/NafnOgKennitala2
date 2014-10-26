@@ -10,11 +10,6 @@
         <activity
             android:name=".MyActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Allergy_input"
@@ -39,6 +34,35 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="myfirstapp.example.com.nafnogkennitala.MyActivity" />
+        </activity>
+        <activity
+            android:name=".StartActivity"
+            android:label="@string/title_activity_start" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Info_choice"
+            android:label="@string/title_activity_info_choice" >
+        </activity>
+        <activity
+            android:name=".ExamineUser"
+            android:label="@string/title_activity_examine_user" >
+        </activity>
+        <activity
+            android:name=".ExamineAllergy"
+            android:label="@string/title_activity_examine_allergy" >
+        </activity>
+        <activity
+            android:name=".ExamineMeds"
+            android:label="@string/title_activity_examine_meds" >
+        </activity>
+        <activity
+            android:name=".ExamineDisease"
+            android:label="@string/title_activity_examine_disease" >
         </activity>
     </application>
 

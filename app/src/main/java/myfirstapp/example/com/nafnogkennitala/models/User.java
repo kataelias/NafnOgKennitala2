@@ -21,17 +21,12 @@ import io.realm.annotations.RealmClass;
 public class User extends RealmObject {
 
     private String name;
-
     private String ssn;
 
-
-/*
     private RealmList<Meds> medsList;
-
     private RealmList<Faults> faultList;
-
     private RealmList<Allergy> allergyList;
-*/
+
     public String getName() {
         return name;
     }
@@ -47,7 +42,6 @@ public class User extends RealmObject {
     public void setSsn(String ssn) {
         this.ssn = ssn;
     }
-/*
     public RealmList<Meds> getMedsList() {
         return medsList;
     }
@@ -71,5 +65,4 @@ public class User extends RealmObject {
     public void setAllergyList(RealmList<Allergy> allergyList){
         this.allergyList = allergyList;
     }
-*/
 }
