@@ -33,7 +33,6 @@ public class Medicine_input extends Activity {
         MedicineText.setText(text);
 
         startActivity(new Intent(getApplicationContext(), Disease_input.class));
-        finish();
     }
 
     public void onNextButtonClick(View v) {

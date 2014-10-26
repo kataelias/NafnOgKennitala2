@@ -32,7 +32,6 @@ public class Disease_input extends Activity {
         String text = (DiseaseInput.getText().toString());
         DiseaseText.setText(text);
         Info.setInfoIsSaved(this);
-        finish();
     }
 
     public void onNextButtonClick(View v) {

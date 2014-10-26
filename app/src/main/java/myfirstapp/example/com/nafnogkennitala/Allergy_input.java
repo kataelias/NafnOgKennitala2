@@ -33,7 +33,6 @@ public class Allergy_input extends Activity {
         AllergyText.setText(text);
 
         startActivity(new Intent(getApplicationContext(), Medicine_input.class));
-        finish();
     }
 
     public void onNextButtonClick(View v) {

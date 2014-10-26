@@ -99,7 +99,6 @@ public class MyActivity extends Activity {
         realm.commitTransaction();
 
         startActivity(new Intent(getApplicationContext(), Allergy_input.class));
-        finish();
 
         //Toast.makeText(getApplicationContext(), "Yay!", Toast.LENGTH_LONG).show();
     }
