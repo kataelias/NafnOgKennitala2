@@ -6,7 +6,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="myfirstapp.example.com.nafnogkennitala.Allergy_input">
+    tools:context="myfirstapp.example.com.nafnogkennitala.Allergy_input"
+    android:background="#FFF4FE"
+    android:id="@+id/">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,14 +16,14 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Sláðu inn ofnæmi sem þú hefur"
         android:id="@+id/txt_allergy"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="53dp"
         android:maxHeight="60dp"
         android:maxWidth="500dp"
         android:textAlignment="center"
-        android:background="#ffff3f45"
-        android:textColor="#ffffffff" />
+        android:background="#C35155"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/write_allergy" />
 
     <EditText
         android:layout_width="300dp"
@@ -30,7 +32,8 @@
         android:layout_below="@+id/txt_allergy"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
-        android:hint="Ofnæmi" />
+        android:hint="Ofnæmi"
+        android:background="#FFB4B4" />
 
     <Button
         android:layout_width="200dp"
@@ -42,7 +45,8 @@
         android:layout_below="@+id/next_allergy"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:background="#B4C9FC" />
 
     <Button
         android:layout_width="200dp"
@@ -54,6 +58,7 @@
         android:layout_below="@+id/write_allergy"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:background="#B4C9FC" />
 
 </RelativeLayout>
