@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import io.realm.Realm;
 import io.realm.RealmQuery;
@@ -22,7 +23,17 @@ public class ExamineDisease extends Activity {
 
         Realm realm = Realm.getInstance(this);
         RealmQuery<Faults> query = realm.where(Faults.class);
-        RealmResults<Faults> result1 = query.findAll();
+        RealmResults<Faults> result = query.findAll();
+
+        String disease = "";
+
+        for(Faults f : result){
+            disease = disease + f.getName() + " ";
+        }
+
+        TextView userFaults= (TextView)findViewById(R.id.Disease);
+
+        userFaults.setText(disease);
     }
 
 

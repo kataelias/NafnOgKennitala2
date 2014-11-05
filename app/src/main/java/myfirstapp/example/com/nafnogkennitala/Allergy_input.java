@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import io.realm.Realm;
+import myfirstapp.example.com.nafnogkennitala.models.Allergy;
+
 /*
 Höfundur: Kristrún Harpa Gunnarsdóttir
 Dagsetning 11.10.2014
@@ -27,10 +30,19 @@ public class Allergy_input extends Activity {
 
     public void onButtonClick(View v){
 
+
+
         EditText AllergyInput = (EditText)findViewById(R.id.write_allergy);
         TextView AllergyText = (TextView)findViewById(R.id.txt_allergy);
         String text = (AllergyInput.getText().toString());
         AllergyText.setText(text);
+
+        Realm realm = Realm.getInstance(this);
+        realm.beginTransaction();
+        Allergy allergy = realm.createObject(Allergy.class);
+        allergy.setName(AllergyInput.getText().toString());
+
+        realm.commitTransaction();
 
         startActivity(new Intent(getApplicationContext(), Medicine_input.class));
     }

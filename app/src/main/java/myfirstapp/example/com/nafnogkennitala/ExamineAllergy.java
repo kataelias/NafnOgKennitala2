@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import io.realm.Realm;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
 import myfirstapp.example.com.nafnogkennitala.models.Allergy;
+import myfirstapp.example.com.nafnogkennitala.models.User;
 
 
 public class ExamineAllergy extends Activity {
@@ -22,8 +24,20 @@ public class ExamineAllergy extends Activity {
 
         Realm realm = Realm.getInstance(this);
         RealmQuery<Allergy> query = realm.where(Allergy.class);
-        RealmResults<Allergy> result1 = query.findAll();
+        RealmResults<Allergy> result = query.findAll();
+
+        String allergy = "";
+
+        for(Allergy a : result){
+           allergy = allergy + a.getName() + " ";
+        }
+
+        TextView userAllergy = (TextView)findViewById(R.id.Allergy);
+
+        userAllergy.setText(allergy);
     }
+
+
 
 
     public void onButtonClick(View v){

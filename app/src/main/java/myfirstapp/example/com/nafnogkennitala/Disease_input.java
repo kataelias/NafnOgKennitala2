@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import io.realm.Realm;
+import myfirstapp.example.com.nafnogkennitala.models.Faults;
+
 /*
 Höfundur: Kristrún Harpa Gunnarsdóttir
 Dagsetning 16.10.2014
@@ -32,6 +35,14 @@ public class Disease_input extends Activity {
         String text = (DiseaseInput.getText().toString());
         DiseaseText.setText(text);
         Info.setInfoIsSaved(this);
+
+        Realm realm = Realm.getInstance(this);
+        realm.beginTransaction();
+        Faults fault = realm.createObject(Faults.class);
+        fault.setName(DiseaseInput.getText().toString());
+
+        realm.commitTransaction();
+
     }
 
     public void onNextButtonClick(View v) {

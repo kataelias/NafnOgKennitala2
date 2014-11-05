@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import io.realm.Realm;
 import io.realm.RealmQuery;
@@ -23,6 +26,19 @@ public class ExamineUser extends Activity {
         Realm realm = Realm.getInstance(this);
         RealmQuery<User> query = realm.where(User.class);
         RealmResults<User> result1 = query.findAll();
+        /*for(User u : result1){
+            String userName = u.getName();
+            String Ssn = u.getSsn();
+        }*/
+        User u = result1.get(0);
+        String name = u.getName();
+        String ssn = u.getSsn();
+
+        TextView nameTv = (TextView)findViewById(R.id.name);
+        TextView ssnTv = (TextView)findViewById(R.id.ssn);
+
+        nameTv.setText(name);
+        ssnTv.setText(ssn);
     }
 
     public void onButtonClick(View v){

@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import io.realm.Realm;
+import myfirstapp.example.com.nafnogkennitala.models.Meds;
+
 /*
 Höfundur: Kristrún Harpa Gunnarsdóttir
 Dagsetning 14.10.2014
@@ -31,6 +34,13 @@ public class Medicine_input extends Activity {
         TextView MedicineText = (TextView)findViewById(R.id.txt_medicine);
         String text = (MedicineInput.getText().toString());
         MedicineText.setText(text);
+
+        Realm realm = Realm.getInstance(this);
+        realm.beginTransaction();
+        Meds medicine = realm.createObject(Meds.class);
+        medicine.setName(MedicineInput.getText().toString());
+
+        realm.commitTransaction();
 
         startActivity(new Intent(getApplicationContext(), Disease_input.class));
     }
