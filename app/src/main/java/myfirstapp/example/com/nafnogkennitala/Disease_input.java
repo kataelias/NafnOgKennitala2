@@ -51,6 +51,13 @@ public class Disease_input extends Activity {
         TextView DiseaseText = (TextView)findViewById(R.id.txt_disease);
         String text = (DiseaseInput.getText().toString());
         DiseaseText.setText(text);
+
+        Realm realm = Realm.getInstance(this);
+        realm.beginTransaction();
+        Faults fault = realm.createObject(Faults.class);
+        fault.setName(DiseaseInput.getText().toString());
+
+        realm.commitTransaction();
     }
 
 

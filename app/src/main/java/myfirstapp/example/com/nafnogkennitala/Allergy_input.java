@@ -53,6 +53,13 @@ public class Allergy_input extends Activity {
         TextView AllergyText = (TextView)findViewById(R.id.txt_allergy);
         String text = (AllergyInput.getText().toString());
         AllergyText.setText(text);
+
+        Realm realm = Realm.getInstance(this);
+        realm.beginTransaction();
+        Allergy allergy = realm.createObject(Allergy.class);
+        allergy.setName(AllergyInput.getText().toString());
+
+        realm.commitTransaction();
     }
 
     @Override

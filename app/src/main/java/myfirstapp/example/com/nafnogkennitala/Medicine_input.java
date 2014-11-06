@@ -51,6 +51,13 @@ public class Medicine_input extends Activity {
         TextView MedicineText = (TextView)findViewById(R.id.txt_medicine);
         String text = (MedicineInput.getText().toString());
         MedicineText.setText(text);
+
+        Realm realm = Realm.getInstance(this);
+        realm.beginTransaction();
+        Meds medicine = realm.createObject(Meds.class);
+        medicine.setName(MedicineInput.getText().toString());
+
+        realm.commitTransaction();
     }
 
     @Override

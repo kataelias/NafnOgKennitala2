@@ -29,7 +29,7 @@ public class ExamineAllergy extends Activity {
         String allergy = "";
 
         for(Allergy a : result){
-           allergy = allergy + a.getName() + " ";
+           allergy = allergy + a.getName() + ", ";
         }
 
         TextView userAllergy = (TextView)findViewById(R.id.Allergy);

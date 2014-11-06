@@ -28,7 +28,7 @@ public class ExamineMeds extends Activity {
         String medication = "";
 
         for(Meds m : result){
-            medication = medication + m.getName() + " ";
+            medication = medication + m.getName() + ", ";
         }
 
         TextView userMeds = (TextView)findViewById(R.id.Medication);

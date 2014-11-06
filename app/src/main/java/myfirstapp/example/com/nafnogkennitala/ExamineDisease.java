@@ -28,7 +28,7 @@ public class ExamineDisease extends Activity {
         String disease = "";
 
         for(Faults f : result){
-            disease = disease + f.getName() + " ";
+            disease = disease + f.getName() + ", ";
         }
 
         TextView userFaults= (TextView)findViewById(R.id.Disease);
