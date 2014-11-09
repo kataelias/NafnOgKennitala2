@@ -64,6 +64,20 @@
             android:name=".ExamineDisease"
             android:label="@string/title_activity_examine_disease" >
         </activity>
+
+    <receiver
+        android:icon="@drawable/red_cross"
+        android:label="Emergency Button"
+        android:name="EmergencyButtonAppWidgetProvider" >
+        <intent-filter >
+            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+        </intent-filter>
+
+        <meta-data
+            android:name="android.appwidget.provider"
+            android:resource="@xml/widget_info" />
+    </receiver>
+
     </application>
 
 </manifest>
