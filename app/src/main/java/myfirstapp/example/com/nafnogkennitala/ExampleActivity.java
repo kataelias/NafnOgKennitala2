@@ -9,5 +9,4 @@ package myfirstapp.example.com.nafnogkennitala;
 public class ExampleActivity {
 
 
-
 }
