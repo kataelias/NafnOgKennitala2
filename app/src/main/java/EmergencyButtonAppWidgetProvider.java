@@ -36,7 +36,7 @@ public class EmergencyButtonAppWidgetProvider extends AppWidgetProvider {
 
 
 
-    public void onUpdate(View view, Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+    public void onUpdate(View view, final Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 
 
 
@@ -53,23 +53,13 @@ public class EmergencyButtonAppWidgetProvider extends AppWidgetProvider {
 
             alertDialogBuilder.setView(promptView);
 
-            String number = "";
-            int num2 = (int) Math.round(Math.random()*1000);
-            if(num2 < 10) {
-                number = "00" + num2;
-            }
-            else{
-                if(num2 < 100){
-                    number = "0" + num2;
-                }
-                else{
-                    number = number + num2;
-                }
-            }
+
+            int num2 = (int) Math.round(Math.random() * 1000);
+            final String number = num2 < 10 ? "00" + num2 : num2 < 100 ? "0" + num2 : "" + num2;
+
+
             EditText input = (EditText) promptView.findViewById(R.id.userInput);
-            String text = (input.getText().toString());
-
-
+            final String text = (input.getText().toString());
 
             // setup a dialog window
             alertDialogBuilder
@@ -77,28 +67,34 @@ public class EmergencyButtonAppWidgetProvider extends AppWidgetProvider {
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
 
-                            if(text == number){
 
-                                //Kata, have fun
+                        if(text.equals(number))
 
-                            }
-                            else{
-                                Context context = getApplicationContext();
-                                CharSequence text = "Reyndu aftur";
-                                int duration = Toast.LENGTH_SHORT;
+                        {
 
-                                Toast toast = Toast.makeText(context, text, duration);
-                                toast.show();
-                            }
+                            //Kata, have fun
+
                         }
-                    })
-                    .setNegativeButton("Cancel",
-            new DialogInterface.OnClickListener() {
 
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.cancel();
-                }
-            });
+                        else
+
+                        {
+
+                            CharSequence text2 = "Reyndu aftur";
+                            int duration = Toast.LENGTH_SHORT;
+
+                            Toast toast = Toast.makeText(context, text2, duration);
+                            toast.show();
+                        }
+                    }
+        })
+                    .setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
             // create an alert dialog
             AlertDialog alertD = alertDialogBuilder.create();
 
