@@ -2,12 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="myfirstapp.example.com.nafnogkennitala" >
 
-    <uses-sdk
-        android:minSdkVersion="17">
-     </uses-sdk>
+    <uses-sdk android:minSdkVersion="17" >
+    </uses-sdk>
 
-    <uses-permission
-        android:name="android.permission.INTERNET">
+    <uses-permission android:name="android.permission.INTERNET" >
     </uses-permission>
 
     <application
@@ -43,17 +41,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="myfirstapp.example.com.nafnogkennitala.MyActivity" />
         </activity>
-
         <activity
             android:name=".StartActivity"
-            android:label="@string/title_activity_start"
-            android:icon="@drawable/red_button">
+            android:icon="@drawable/red_button"
+            android:label="@string/title_activity_start" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Info_choice"
             android:label="@string/title_activity_info_choice" >
@@ -75,20 +72,23 @@
             android:label="@string/title_activity_examine_disease" >
         </activity>
 
-    <receiver
-        android:icon="@drawable/red_button"
-        android:label="Emergency Button"
-        android:name="EmergencyButtonAppWidgetProvider" >
-        <intent-filter >
-            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-        </intent-filter>
+        <receiver
+            android:name=".EmergencyButtonAppWidgetProvider"
+            android:icon="@drawable/red_button"
+            android:label="Emergency Button" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
 
-        <meta-data
-            android:name="android.appwidget.provider"
-            android:resource="@xml/widget_info" />
-    </receiver>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
 
+        <activity
+            android:name=".Safety"
+            android:label="@string/title_activity_safety" >
+        </activity>
     </application>
-
 
 </manifest>

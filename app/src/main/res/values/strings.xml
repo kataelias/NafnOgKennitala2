@@ -13,5 +13,6 @@
     <string name="title_activity_examine_allergy">ExamineAllergy</string>
     <string name="title_activity_examine_meds">ExamineMeds</string>
     <string name="title_activity_examine_disease">ExamineDisease</string>
+    <string name="title_activity_safety">Safety</string>
 
 </resources>
