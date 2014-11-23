@@ -1,12 +1,14 @@
 package myfirstapp.example.com.nafnogkennitala;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 import io.realm.Realm;
 import myfirstapp.example.com.nafnogkennitala.models.Faults;
@@ -29,7 +31,6 @@ public class Disease_input extends Activity {
 
     public void onButtonClick(View v){
 
-
         EditText DiseaseInput = (EditText)findViewById(R.id.write_disease);
         TextView DiseaseText = (TextView)findViewById(R.id.txt_disease);
         String text = (DiseaseInput.getText().toString());
@@ -43,6 +44,12 @@ public class Disease_input extends Activity {
 
         realm.commitTransaction();
 
+        AlertDialog.Builder alert = new AlertDialog.Builder(Disease_input.this);
+        alert.setTitle("Skráningu lokið");
+        alert.setMessage("Allar upplýsingar hafa verið vistaðar. Óhætt er að loka forritinu");
+        alert.setNeutralButton("OK", null);
+        alert.create();
+        alert.show();
     }
 
     public void onNextButtonClick(View v) {
@@ -66,6 +73,7 @@ public class Disease_input extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.disease_input, menu);
         return true;
+
     }
 
     @Override
