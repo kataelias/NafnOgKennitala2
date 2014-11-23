@@ -33,8 +33,6 @@ import android.widget.Toast;
 
 public class EmergencyButtonAppWidgetProvider extends AppWidgetProvider {
 
-    final Context context = this;
-    private EditText editTextMainScreen;
 
 
 
@@ -56,7 +54,7 @@ public class EmergencyButtonAppWidgetProvider extends AppWidgetProvider {
             alertDialogBuilder.setView(promptView);
 
             String number = "";
-            int num2 = Math.round(Math.random()*1000);
+            int num2 = (int) Math.round(Math.random()*1000);
             if(num2 < 10) {
                 number = "00" + num2;
             }
