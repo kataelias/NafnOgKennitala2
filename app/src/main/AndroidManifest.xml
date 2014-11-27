@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="myfirstapp.example.com.nafnogkennitala" >
 
-    <uses-sdk android:minSdkVersion="17" >
+    <uses-sdk
+        android:minSdkVersion="17">
     </uses-sdk>
 
     <uses-permission android:name="android.permission.INTERNET" >
@@ -78,12 +79,25 @@
             android:label="Emergency Button" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.SEND_FOR_HELP" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
         </receiver>
+
+        <receiver
+            android:name="EmergencyButtonWidgetIntentReceiver"
+            android:label="@string/Safe_and_appy">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_FOR_HELP" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+         </receiver>
 
         <activity
             android:name=".Safety"

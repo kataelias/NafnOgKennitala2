@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.app.Dialog;
 
 
 /**
@@ -33,95 +34,33 @@ import android.widget.Toast;
 
 public class EmergencyButtonAppWidgetProvider extends AppWidgetProvider {
 
-
-
+    /*public static String WIDGET_BUTTON = "MY_PACKAGE_NAME.WIDGET_BUTTON";*/
 
     public void onUpdate(View view, final Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 
 
-
-        // Perform this loop procedure for each App Widget that belongs to this provider
-        for (int i = 0; i < appWidgetIds.length; i++) {
-            int appWidgetId = appWidgetIds[i];
-
-
-            LayoutInflater layoutInflater = LayoutInflater.from(context);
-
-            View promptView = layoutInflater.inflate(R.layout.prompts, null);
-
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-
-            alertDialogBuilder.setView(promptView);
+        // Get the layout for the App Widget and attach an on-click listener
+        // to the button
+        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.button_appwidget);
+        views.setOnClickPendingIntent(R.id.emergencyButton, buildButtonPendingIntent(context));
 
 
-            int num2 = (int) Math.round(Math.random() * 1000);
-            final String number = num2 < 10 ? "00" + num2 : num2 < 100 ? "0" + num2 : "" + num2;
-
-
-            EditText input = (EditText) promptView.findViewById(R.id.userInput);
-            final String text = (input.getText().toString());
-
-            // setup a dialog window
-            alertDialogBuilder
-                    .setCancelable(false)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-
-
-                        if(text.equals(number))
-
-                        {
-
-                            //Kata, have fun
-
-                        }
-
-                        else
-
-                        {
-
-                            CharSequence text2 = "Reyndu aftur";
-                            int duration = Toast.LENGTH_SHORT;
-
-                            Toast toast = Toast.makeText(context, text2, duration);
-                            toast.show();
-                        }
-                    }
-        })
-                    .setNegativeButton("Cancel",
-                new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-            // create an alert dialog
-            AlertDialog alertD = alertDialogBuilder.create();
-
-            alertD.show();
-
-
-            // Create an Intent to launch ExampleActivity
-            /*Intent intent = new Intent(context, MyActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-
-
-
-
-            // Get the layout for the App Widget and attach an on-click listener
-            // to the button
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.button_appwidget);
-            views.setOnClickPendingIntent(R.id.emergencyButton, pendingIntent);
-            */
-
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.button_appwidget);
-
-            // Tell the AppWidgetManager to perform an update on the current app widget
-            appWidgetManager.updateAppWidget(appWidgetId, views);
-
-
-        }
-        super.onUpdate(context, appWidgetManager, appWidgetIds);
+        pushWidgetUpdate(context, views);
     }
+
+    public static PendingIntent buildButtonPendingIntent(Context context) {
+
+        // initiate widget update request
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.WIDGET_UPDATE_ACTION");
+        return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+    public static void pushWidgetUpdate(Context context, RemoteViews remoteViews) {
+        ComponentName myWidget = new ComponentName(context, EmergencyButtonAppWidgetProvider.class);
+        AppWidgetManager manager = AppWidgetManager.getInstance(context);
+        manager.updateAppWidget(myWidget, remoteViews);
+    }
+
+
 
 }
