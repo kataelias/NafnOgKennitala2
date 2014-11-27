@@ -15,13 +15,13 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MyActivity"
+            android:name=".LogUserActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".Allergy_input"
             android:label="@string/title_activity_allergy_input"
-            android:parentActivityName=".MyActivity" >
+            android:parentActivityName=".LogUserActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="myfirstapp.example.com.nafnogkennitala.MyActivity" />
@@ -29,7 +29,7 @@
         <activity
             android:name=".Medicine_input"
             android:label="@string/title_activity_medicine_input"
-            android:parentActivityName=".MyActivity" >
+            android:parentActivityName=".LogUserActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="myfirstapp.example.com.nafnogkennitala.MyActivity" />
@@ -37,7 +37,7 @@
         <activity
             android:name=".Disease_input"
             android:label="@string/title_activity_disease_input"
-            android:parentActivityName=".MyActivity" >
+            android:parentActivityName=".LogUserActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="myfirstapp.example.com.nafnogkennitala.MyActivity" />
@@ -51,6 +51,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".EmergencyButtonConfirmationActivity"
+            android:label="Emergency Confirmation">
+
         </activity>
         <activity
             android:name=".Info_choice"

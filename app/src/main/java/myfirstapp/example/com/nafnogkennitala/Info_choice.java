@@ -14,8 +14,6 @@ public class Info_choice extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_choice);
     }
@@ -29,8 +27,7 @@ public class Info_choice extends Activity {
     public void onNextButtonClick(View v) {
 
         Realm.deleteRealmFile(this);
-        startActivity(new Intent(getApplicationContext(), MyActivity.class));
-
+        startActivity(new Intent(getApplicationContext(), LogUserActivity.class));
 
     }
 

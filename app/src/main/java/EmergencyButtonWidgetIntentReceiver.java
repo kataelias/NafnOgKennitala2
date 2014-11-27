@@ -1,3 +1,4 @@
+import myfirstapp.example.com.nafnogkennitala.EmergencyButtonAppWidgetProvider;
 import myfirstapp.example.com.nafnogkennitala.R;
 
 import android.content.BroadcastReceiver;

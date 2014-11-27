@@ -2,7 +2,6 @@ package myfirstapp.example.com.nafnogkennitala;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,7 +20,7 @@ public class StartActivity extends Activity {
             startActivity(new Intent(getApplicationContext(), Info_choice.class));
         }
         else{
-            startActivity(new Intent(getApplicationContext(), MyActivity.class));
+            startActivity(new Intent(getApplicationContext(), LogUserActivity.class));
         }
     }
 

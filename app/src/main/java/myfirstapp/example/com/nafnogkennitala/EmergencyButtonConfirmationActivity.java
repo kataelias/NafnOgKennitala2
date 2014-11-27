@@ -1,8 +1,11 @@
+package myfirstapp.example.com.nafnogkennitala;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -14,10 +17,16 @@ import myfirstapp.example.com.nafnogkennitala.R;
 public class EmergencyButtonConfirmationActivity extends Activity {
 
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
 
-    public void onReceive(View view, final Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+        super.onCreate(savedInstanceState);
+        //Toast.makeText(this.getApplicationContext(), "Please?", Toast.LENGTH_SHORT);
+        setContentView(R.layout.prompts);
+    }
 
-
+    public void bla(){
+        final Context context = this.getApplicationContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
 
         View promptView = layoutInflater.inflate(R.layout.prompts, null);

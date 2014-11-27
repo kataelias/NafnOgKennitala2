@@ -36,7 +36,7 @@ inniheldur einnig gettera og settera fyrir hvern entry í töfluna. Að loknum i
 klasinn svo á næsta glugga í forritinu.
  */
 
-public class MyActivity extends Activity {
+public class LogUserActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
