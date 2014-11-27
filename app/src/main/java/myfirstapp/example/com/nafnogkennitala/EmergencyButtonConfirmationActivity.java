@@ -36,8 +36,8 @@ public class EmergencyButtonConfirmationActivity extends Activity {
         alertDialogBuilder.setView(promptView);
 
 
-        int num2 = (int) Math.round(Math.random() * 1000);
-        final String number = num2 < 10 ? "00" + num2 : num2 < 100 ? "0" + num2 : "" + num2;
+        int randomNumber = (int) Math.round(Math.random() * 1000);
+        final String number = randomNumber < 10 ? "00" + randomNumber : randomNumber < 100 ? "0" + randomNumber : "" + randomNumber;
 
 
         EditText input = (EditText) promptView.findViewById(R.id.userInput);
@@ -47,13 +47,15 @@ public class EmergencyButtonConfirmationActivity extends Activity {
         alertDialogBuilder
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
+                    public int onClick(DialogInterface dialog, int id) {
 
 
                         if(text.equals(number))
 
                         {
-
+                            //Fyrir prófanadrifna forritun
+                            return 1;
+                            
                             //Kata, have fun
 
                         }
@@ -67,6 +69,8 @@ public class EmergencyButtonConfirmationActivity extends Activity {
 
                             Toast toast = Toast.makeText(context, text2, duration);
                             toast.show();
+                            //Fyrir prófanadrifna forritun
+                            return 0;
                         }
                     }
                 })

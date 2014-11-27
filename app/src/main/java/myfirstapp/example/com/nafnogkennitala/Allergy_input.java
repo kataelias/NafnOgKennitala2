@@ -31,7 +31,7 @@ public class Allergy_input extends Activity {
     public void onButtonClick(View v){
 
 
-
+/*
         EditText AllergyInput = (EditText)findViewById(R.id.write_allergy);
         TextView AllergyText = (TextView)findViewById(R.id.txt_allergy);
         String text = (AllergyInput.getText().toString());
@@ -43,6 +43,9 @@ public class Allergy_input extends Activity {
         allergy.setName(AllergyInput.getText().toString());
 
         realm.commitTransaction();
+*/
+
+        onNextButtonClick(v);
 
         startActivity(new Intent(getApplicationContext(), Medicine_input.class));
     }
