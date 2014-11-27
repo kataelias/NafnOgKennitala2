@@ -7,7 +7,6 @@ import android.app.PendingIntent;
 import android.widget.RemoteViews;
 import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
-import android.widget.Toast;
 
 
 /**
@@ -23,7 +22,6 @@ public class EmergencyButtonAppWidgetProvider extends AppWidgetProvider {
     private static final String WIDGET_BUTTON = "EMERGENCY_BUTTON.PRESSED";
 
     // Update-ar Homescreen Widgetið.
-    //
 
     @Override
     public void onUpdate(final Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -50,27 +48,8 @@ public class EmergencyButtonAppWidgetProvider extends AppWidgetProvider {
         if(intent.getAction().equals(WIDGET_BUTTON)){
             Intent activity = new Intent(context, myfirstapp.example.com.nafnogkennitala.EmergencyButtonConfirmationActivity.class);
             activity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            Toast.makeText(context, "It be clicked.", Toast.LENGTH_LONG);
             context.startActivity(activity);
         }
         super.onReceive(context, intent);
     }
-
-    public static PendingIntent buildButtonPendingIntent(Context context) {
-
-        // initiate widget update request
-        Intent intent = new Intent();
-        intent.setAction("android.intent.action.WIDGET_UPDATE_ACTION");
-        return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-    }
-
-
-    public static void pushWidgetUpdate(Context context, RemoteViews remoteViews) {
-        ComponentName myWidget = new ComponentName(context, EmergencyButtonAppWidgetProvider.class);
-        AppWidgetManager manager = AppWidgetManager.getInstance(context);
-        manager.updateAppWidget(myWidget, remoteViews);
-    }
-
-
-
 }
