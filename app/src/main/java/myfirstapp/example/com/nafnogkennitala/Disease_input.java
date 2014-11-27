@@ -30,7 +30,7 @@ public class Disease_input extends Activity {
     }
 
     public void onButtonClick(View v){
-
+/*
         EditText DiseaseInput = (EditText)findViewById(R.id.write_disease);
         TextView DiseaseText = (TextView)findViewById(R.id.txt_disease);
         String text = (DiseaseInput.getText().toString());
@@ -43,6 +43,8 @@ public class Disease_input extends Activity {
         fault.setName(DiseaseInput.getText().toString());
 
         realm.commitTransaction();
+*/
+        onNextButtonClick(v);
 
         AlertDialog.Builder alert = new AlertDialog.Builder(Disease_input.this);
         alert.setTitle("Skráningu lokið");

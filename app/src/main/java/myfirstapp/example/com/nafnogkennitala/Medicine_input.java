@@ -29,7 +29,7 @@ public class Medicine_input extends Activity {
     }
 
     public void onButtonClick(View v){
-
+/*
         EditText MedicineInput = (EditText)findViewById(R.id.write_medicine);
         TextView MedicineText = (TextView)findViewById(R.id.txt_medicine);
         String text = (MedicineInput.getText().toString());
@@ -41,6 +41,8 @@ public class Medicine_input extends Activity {
         medicine.setName(MedicineInput.getText().toString());
 
         realm.commitTransaction();
+*/
+        onNextButtonClick(v);
 
         startActivity(new Intent(getApplicationContext(), Disease_input.class));
     }
