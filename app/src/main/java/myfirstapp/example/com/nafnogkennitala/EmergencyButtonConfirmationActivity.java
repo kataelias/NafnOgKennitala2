@@ -8,7 +8,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import myfirstapp.example.com.nafnogkennitala.R;
@@ -16,77 +18,37 @@ import myfirstapp.example.com.nafnogkennitala.R;
 
 public class EmergencyButtonConfirmationActivity extends Activity {
 
+    private String key;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        //Toast.makeText(this.getApplicationContext(), "Please?", Toast.LENGTH_SHORT);
         setContentView(R.layout.prompts);
+        key = "";
+        key += ((int)(Math.random()*9 + 1));
+        key += ((int)(Math.random()*10));
+        key += ((int)(Math.random()*10));
+        ((TextView)findViewById(R.id.promptsNumber)).setText(key);
     }
 
-    public void bla(){
-        final Context context = this.getApplicationContext();
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
+    public void confirmEmergency(View view) {
 
-        View promptView = layoutInflater.inflate(R.layout.prompts, null);
+        if (confirmInput()) {
+            // get GPS and send SMS
+            Toast.makeText(this.getApplicationContext(),
+                    "Always true?", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this.getApplicationContext(),
+                    "Innslegin tala passar ekki við uppgefna tölu!", Toast.LENGTH_LONG).show();
+        }
+    }
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-
-        alertDialogBuilder.setView(promptView);
-
-
-        int randomNumber = (int) Math.round(Math.random() * 1000);
-        final String number = randomNumber < 10 ? "00" + randomNumber : randomNumber < 100 ? "0" + randomNumber : "" + randomNumber;
-
-
-        EditText input = (EditText) promptView.findViewById(R.id.userInput);
-        final String text = (input.getText().toString());
-
-        // setup a dialog window
-        alertDialogBuilder
-                .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public int onClick(DialogInterface dialog, int id) {
-
-
-                        if(text.equals(number))
-
-                        {
-                            //Fyrir prófanadrifna forritun
-                            return 1;
-                            
-                            //Kata, have fun
-
-                        }
-
-                        else
-
-                        {
-
-                            CharSequence text2 = "Reyndu aftur";
-                            int duration = Toast.LENGTH_SHORT;
-
-                            Toast toast = Toast.makeText(context, text2, duration);
-                            toast.show();
-                            //Fyrir prófanadrifna forritun
-                            return 0;
-                        }
-                    }
-                })
-                .setNegativeButton("Cancel",
-                        new DialogInterface.OnClickListener() {
-
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-        // create an alert dialog
-        AlertDialog alertD = alertDialogBuilder.create();
-
-        alertD.show();
-
-
+    private boolean confirmInput(){
+        String userInput = ((EditText)findViewById(R.id.promptsInput)).getText().toString();
+        Toast.makeText(this.getApplicationContext(),
+                "Comparing '" + key + "' to '" + userInput + "'", Toast.LENGTH_LONG);
+        return userInput.equals(key);
     }
 
 }
