@@ -84,7 +84,6 @@
             android:label="Emergency Button" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="android.intent.action.SEND_FOR_HELP" />
             </intent-filter>
 
             <meta-data

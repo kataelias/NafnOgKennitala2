@@ -14,13 +14,16 @@ import android.widget.Toast;
  * Created by katrineliasdottir on 09/11/14.
  *
  * Klasi sem býr til widget hnapp á Home Screen og á Lock Screen,
- * sem virkjar MyActivity klasann þegar smellt er á hann.
+ * sem virkjar EmergencyButtonConfirmationActivity klasann þegar smellt er á hann.
  */
 
 
 public class EmergencyButtonAppWidgetProvider extends AppWidgetProvider {
 
     private static final String WIDGET_BUTTON = "EMERGENCY_BUTTON.PRESSED";
+
+    // Update-ar Homescreen Widgetið.
+    //
 
     @Override
     public void onUpdate(final Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -35,7 +38,7 @@ public class EmergencyButtonAppWidgetProvider extends AppWidgetProvider {
             intent.setAction(WIDGET_BUTTON);
             PendingIntent pendingIntent =
                     PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-            views.setOnClickPendingIntent(R.id.emergencyButton, pendingIntent); //Should not be R.id.textView!
+            views.setOnClickPendingIntent(R.id.emergencyButton, pendingIntent);
             appWidgetManager.updateAppWidget(widgetID, views);
         }
 
@@ -60,6 +63,8 @@ public class EmergencyButtonAppWidgetProvider extends AppWidgetProvider {
         intent.setAction("android.intent.action.WIDGET_UPDATE_ACTION");
         return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
+
+
     public static void pushWidgetUpdate(Context context, RemoteViews remoteViews) {
         ComponentName myWidget = new ComponentName(context, EmergencyButtonAppWidgetProvider.class);
         AppWidgetManager manager = AppWidgetManager.getInstance(context);
