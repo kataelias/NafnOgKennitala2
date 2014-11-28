@@ -10,6 +10,8 @@ import android.widget.RemoteViews;
 
 /**
  * Created by katrineliasdottir on 26/11/14.
+ *
+ * Klasi sem bregst við þegar ýtt er á hnappinn.
  */
 
 public class EmergencyButtonWidgetIntentReceiver extends BroadcastReceiver {
@@ -26,11 +28,6 @@ public class EmergencyButtonWidgetIntentReceiver extends BroadcastReceiver {
     private void updateWidgetButtonListener(Context context) {
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.button_appwidget);
 
-
-        //REMEMBER TO ALWAYS REFRESH YOUR BUTTON CLICK LISTENERS!!!
-        remoteViews.setOnClickPendingIntent(R.id.emergencyButton, EmergencyButtonAppWidgetProvider.buildButtonPendingIntent(context));
-
-        EmergencyButtonAppWidgetProvider.pushWidgetUpdate(context.getApplicationContext(), remoteViews);
     }
 
 }
